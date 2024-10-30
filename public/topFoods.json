@@ -5,7 +5,10 @@
         "category": "Noodles",
         "price": 12.99,
         "image": "https://images.pexels.com/photos/884600/pexels-photo-884600.jpeg",
-        "purchaseCount": 150
+        "purchaseCount": 150,
+        "madeBy": "Chef Takahashi",
+        "origin": "Japan",
+        "description": "A flavorful and spicy ramen with ingredients like miso, soy sauce, chili oil, and fresh vegetables. Perfect for spice lovers!"
     },
     {
         "id": 2,
@@ -13,7 +16,10 @@
         "category": "Fast Food",
         "price": 8.99,
         "image": "https://images.pexels.com/photos/1199960/pexels-photo-1199960.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "purchaseCount": 120
+        "purchaseCount": 120,
+        "madeBy": "Chef Robinson",
+        "origin": "USA",
+        "description": "A classic American beef burger with cheddar cheese, lettuce, tomato, and pickles. Served with a side of crispy fries."
     },
     {
         "id": 3,
@@ -21,7 +27,10 @@
         "category": "Pizza",
         "price": 10.99,
         "image": "https://images.unsplash.com/photo-1601049801278-7af6d38ca94a",
-        "purchaseCount": 110
+        "purchaseCount": 110,
+        "madeBy": "Chef Luca",
+        "origin": "Italy",
+        "description": "A traditional Margherita pizza with fresh mozzarella, basil, and a homemade tomato sauce on a thin, crispy crust."
     },
     {
         "id": 4,
@@ -29,7 +38,10 @@
         "category": "Salad",
         "price": 9.99,
         "image": "https://images.pexels.com/photos/1213710/pexels-photo-1213710.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "purchaseCount": 95
+        "purchaseCount": 95,
+        "madeBy": "Chef Emily",
+        "origin": "Italy",
+        "description": "A refreshing Caesar salad with romaine lettuce, Parmesan cheese, croutons, and a creamy Caesar dressing."
     },
     {
         "id": 5,
@@ -37,7 +49,10 @@
         "category": "Appetizer",
         "price": 11.99,
         "image": "https://images.pexels.com/photos/6941026/pexels-photo-6941026.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "purchaseCount": 90
+        "purchaseCount": 90,
+        "madeBy": "Chef Dave",
+        "origin": "USA",
+        "description": "Juicy and tender BBQ chicken wings coated in a sweet and smoky barbecue sauce, perfect for sharing."
     },
     {
         "id": 6,
@@ -45,6 +60,9 @@
         "category": "Beverage",
         "price": 7.99,
         "image": "https://images.pexels.com/photos/1334130/pexels-photo-1334130.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "purchaseCount": 85
+        "purchaseCount": 85,
+        "madeBy": "Chef Sarah",
+        "origin": "Brazil",
+        "description": "A refreshing smoothie bowl made with tropical fruits, topped with granola, coconut flakes, and fresh berries."
     }
 ]

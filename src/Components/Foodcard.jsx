@@ -1,31 +1,24 @@
-import { FaShoppingCart } from 'react-icons/fa';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { FaInfoCircle } from 'react-icons/fa';
 
 const Foodcard = ({ food }) => {
-    const { name, category, price, image, purchaseCount } = food; // Destructure the food object
+    const { id, name, category, price, image } = food;
 
     return (
-        <div className="card bg-slate-200 w-96 shadow-xl">
+        <div className="card w-full bg-base-100 shadow-xl">
             <figure>
-                <img
-                    src={image}
-                    alt={name}
-                    className="h-48 w-full object-cover"
-                />
+                <img src={image} alt={name} className="h-48 w-full object-cover" />
             </figure>
             <div className="card-body">
-                <h2 className="card-title">
-                    {name}
-                    <div className="badge badge-secondary ml-2">NEW</div>
-                </h2>
-                <p>{category}</p>
-                <div className="card-actions justify-between mt-4 items-center">
-                    <div className="badge badge-outline">purchase Count: {purchaseCount}</div>
-                    <div className="badge badge-primary bg-[#255441]">${price}</div>
+                <h2 className="card-title">{name}</h2>
+                <p>Category: {category}</p>
+                <p>Price: ${price.toFixed(2)}</p>
+                <div className="card-actions justify-end">
+                    <Link to={`/food/${id}`} className="badge badge-outline flex items-center gap-1">
+                        <FaInfoCircle /> Details
+                    </Link>
                 </div>
-                <button className="btn bg-[#947542] btn-primary mt-4 flex items-center gap-2 rounded-2xl">
-                    <FaShoppingCart />
-                    Buy Now
-                </button>
             </div>
         </div>
     );
