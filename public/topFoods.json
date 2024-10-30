@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Spicy Ramen",
+        "category": "Noodles",
+        "price": 12.99,
+        "image": "https://images.pexels.com/photos/884600/pexels-photo-884600.jpeg",
+        "purchaseCount": 150
+    },
+    {
+        "id": 2,
+        "name": "Classic Burger",
+        "category": "Fast Food",
+        "price": 8.99,
+        "image": "https://images.pexels.com/photos/1199960/pexels-photo-1199960.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "purchaseCount": 120
+    },
+    {
+        "id": 3,
+        "name": "Margherita Pizza",
+        "category": "Pizza",
+        "price": 10.99,
+        "image": "https://images.unsplash.com/photo-1601049801278-7af6d38ca94a",
+        "purchaseCount": 110
+    },
+    {
+        "id": 4,
+        "name": "Caesar Salad",
+        "category": "Salad",
+        "price": 9.99,
+        "image": "https://images.pexels.com/photos/1213710/pexels-photo-1213710.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "purchaseCount": 95
+    },
+    {
+        "id": 5,
+        "name": "BBQ Chicken Wings",
+        "category": "Appetizer",
+        "price": 11.99,
+        "image": "https://images.pexels.com/photos/6941026/pexels-photo-6941026.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "purchaseCount": 90
+    },
+    {
+        "id": 6,
+        "name": "Vegan Smoothie Bowl",
+        "category": "Beverage",
+        "price": 7.99,
+        "image": "https://images.pexels.com/photos/1334130/pexels-photo-1334130.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "purchaseCount": 85
+    }
+]
