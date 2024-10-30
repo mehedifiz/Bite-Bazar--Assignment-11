@@ -18,7 +18,7 @@ const router = createBrowserRouter([
         element: <Home/>
       },
       {
-        path:'/food/:id',
+        path:'/food/:_id',
        
         element: <SingleFoodPage/>
       },

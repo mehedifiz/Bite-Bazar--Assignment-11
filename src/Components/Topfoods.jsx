@@ -2,25 +2,25 @@ import { useEffect, useState } from "react";
 import Foodcard from "./Foodcard";
 import Sectiontitle from "./SectionTitle";
 import { Link } from "react-router-dom";
+import UseAxiospublic from "../Hooks/UseAxiospublic";
 
 const Topfoods = () => {
     const [foods, setFoods] = useState([]);
+        const axiospublic = UseAxiospublic()
+        useEffect( ()=>{
 
-    useEffect(() => {
-        fetch('/topFoods.json')
-            .then(res => res.json())
-            .then(data => {
-                // Sort by purchaseCount and select top 6
-                const topFoods = data.sort((a, b) => b.purchaseCount - a.purchaseCount).slice(0, 6);
-                setFoods(topFoods);
-            });
-    }, []);
+            axiospublic.get('/topFoods')
+            .then(data =>{
+                setFoods(data.data)
+            })
+            
+        },[])
 
     return ( <div className="flex flex-col items-cente">
         <Sectiontitle heading='top foods' subheading='bellow you see top foods of our site'></Sectiontitle>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
             {foods.map(food => (
-                <Foodcard key={food.id} food={food} />
+                <Foodcard key={food._id} food={food} />
             ))}
         </div>
 

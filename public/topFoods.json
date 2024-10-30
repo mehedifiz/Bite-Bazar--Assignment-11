@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        "_id": 1,
         "name": "Spicy Ramen",
         "category": "Noodles",
         "price": 12.99,
@@ -11,7 +11,7 @@
         "description": "A flavorful and spicy ramen with ingredients like miso, soy sauce, chili oil, and fresh vegetables. Perfect for spice lovers!"
     },
     {
-        "id": 2,
+        "_id": 2,
         "name": "Classic Burger",
         "category": "Fast Food",
         "price": 8.99,
@@ -19,10 +19,10 @@
         "purchaseCount": 120,
         "madeBy": "Chef Robinson",
         "origin": "USA",
-        "description": "A classic American beef burger with cheddar cheese, lettuce, tomato, and pickles. Served with a side of crispy fries."
+        "description": "A classic American beef burger with cheddar cheese, lettuce, tomato, and pickles. Served with a s_ide of crispy fries."
     },
     {
-        "id": 3,
+        "_id": 3,
         "name": "Margherita Pizza",
         "category": "Pizza",
         "price": 10.99,
@@ -33,7 +33,7 @@
         "description": "A traditional Margherita pizza with fresh mozzarella, basil, and a homemade tomato sauce on a thin, crispy crust."
     },
     {
-        "id": 4,
+        "_id": 4,
         "name": "Caesar Salad",
         "category": "Salad",
         "price": 9.99,
@@ -44,7 +44,7 @@
         "description": "A refreshing Caesar salad with romaine lettuce, Parmesan cheese, croutons, and a creamy Caesar dressing."
     },
     {
-        "id": 5,
+        "_id": 5,
         "name": "BBQ Chicken Wings",
         "category": "Appetizer",
         "price": 11.99,
@@ -55,7 +55,7 @@
         "description": "Juicy and tender BBQ chicken wings coated in a sweet and smoky barbecue sauce, perfect for sharing."
     },
     {
-        "id": 6,
+        "_id": 6,
         "name": "Vegan Smoothie Bowl",
         "category": "Beverage",
         "price": 7.99,

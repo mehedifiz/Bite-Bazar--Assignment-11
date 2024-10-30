@@ -1,20 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 const SingleFoodPage = () => {
-    const { id } = useParams();
-    const [food, setFood] = useState(null);
+    const location = useLocation();
+    const { food } = location.state; // Get the food data from state
 
-    useEffect(() => {
-        fetch('/topFoods.json')
-            .then(res => res.json())
-            .then(data => {
-                const selectedFood = data.find(item => item.id === parseInt(id));
-                setFood(selectedFood);
-            });
-    }, [id]);
-
-    if (!food) return <div>Loading...</div>;
+    // Check if food data is available
+    if (!food) return <div>Food data not available.</div>;
 
     return (
         <div className="max-w-4xl mx-auto p-6 mt-6 bg-stone-100 shadow-md rounded-lg">
@@ -25,7 +17,7 @@ const SingleFoodPage = () => {
                 <strong>Category:</strong> {food.category}
             </div>
             <div className="text-lg mb-2">
-                <strong>Price:</strong> ${food.price.toFixed(2)}
+                <strong>Price:</strong> ${food.price}
             </div>
             <div className="text-lg mb-2">
                 <strong>Made By:</strong> {food.madeBy}

@@ -1,9 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { FaInfoCircle } from 'react-icons/fa';
+import { Link } from "react-router-dom";
+import { FaInfoCircle } from "react-icons/fa";
 
 const Foodcard = ({ food }) => {
-    const { id, name, category, price, image } = food;
+    const { _id, name, category, price, image } = food;
 
     return (
         <div className="card w-full bg-base-100 shadow-xl">
@@ -13,9 +12,10 @@ const Foodcard = ({ food }) => {
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
                 <p>Category: {category}</p>
-                <p>Price: ${price.toFixed(2)}</p>
+                <p>Price: ${price}</p>
                 <div className="card-actions justify-end">
-                    <Link to={`/food/${id}`} className="badge badge-outline flex items-center gap-1">
+                    {/* Pass the food data using state in the Link */}
+                    <Link to={`/food/${_id}`} state={{ food }} className="badge badge-outline flex items-center gap-1">
                         <FaInfoCircle /> Details
                     </Link>
                 </div>
