@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Foodcard from "./Foodcard";
 import Sectiontitle from "./SectionTitle";
 import { Link } from "react-router-dom";
-import UseAxiospublic from "../Hooks/UseAxiospublic";
+import UseAxiospublic from "../hooks/UseAxiospublic";
 
 const Topfoods = () => {
     const [foods, setFoods] = useState([]);

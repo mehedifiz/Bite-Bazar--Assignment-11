@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../Auth/Authprovider';
-import UseAxiosprivate from '../Hooks/UseAxiosprivate';
-import UseAxiospublic from '../Hooks/UseAxiospublic';
+import UseAxiosprivate from '../hooks/UseAxiosprivate';
+import UseAxiospublic from '../hooks/UseAxiospublic';
 
 const AddFoodItem = () => {
   const { user } = useContext(AuthContext);

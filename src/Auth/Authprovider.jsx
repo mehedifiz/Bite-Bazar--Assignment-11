@@ -11,7 +11,7 @@ import {
   updateProfile,
 } from 'firebase/auth'
 import auth from './Firebase.config'
-import UseAxiospublic from '../Hooks/UseAxiospublic'
+import UseAxiospublic from '../hooks/UseAxiospublic'
  
 
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Rebanner from '../Components/Rebanner';
 import Sectiontitle from '../Components/SectionTitle';
-import UseAxiospublic from '../Hooks/UseAxiospublic';
+import UseAxiospublic from '../hooks/UseAxiospublic';
 import Foodcard from '../Components/Foodcard';
 
 const AllFoodPage = () => {

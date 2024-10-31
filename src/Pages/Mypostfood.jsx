@@ -1,28 +1,15 @@
-// Mypostfood.jsx
-import React, { useEffect, useState } from 'react';
-import UseAxiosprivate from '../hooks/UseAxiosprivate';
-import useAuth from '../Auth/Useauth';
+// components/Mypostfood.jsx
+import React from 'react';
 import Mypostfoodtable from '../Components/Mypostfoodtable';
+import useMypost from '../Hooks/Usemypost';
 
 const Mypostfood = () => {
-    const [foodItems, setFoodItems] = useState([]);
-    const axiosPrivate = UseAxiosprivate();
-    const{user} =useAuth()
-
-   useEffect(()=>{
-    axiosPrivate.get(`/myfoods/${user?.email}`)
-    .then(res =>{
-        setFoodItems(res.data)
-    })
-
-   } ,[])
-
-   
+    const  [refetch ,foodItems] = useMypost();  
 
     return (
         <div className="container mx-auto p-4">
             <h2 className="text-2xl font-bold mb-4">My Posted Food Items</h2>
-            <Mypostfoodtable foodItems={foodItems} />
+            <Mypostfoodtable   />
         </div>
     );
 };

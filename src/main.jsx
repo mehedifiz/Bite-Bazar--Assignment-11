@@ -1,6 +1,6 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Root from './Root/Root.jsx';
 import Home from './Pages/Home.jsx';
@@ -13,49 +13,56 @@ import Myprofile from './Pages/Myprofile.jsx';
 import AddFoodItem from './Pages/AddFoodItem.jsx';
 import Mypostfood from './Pages/Mypostfood.jsx';
 import PrivateRoute from './Auth/Privateroute.jsx';
-
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+ 
+const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Root />,
     children: [
       {
         path: '/',
-        element: <Home />
+        element: <Home />,
       },
       {
         path: '/food/:_id',
-        element:<PrivateRoute>  <SingleFoodPage /></PrivateRoute>
+        element: <PrivateRoute><SingleFoodPage /></PrivateRoute>,
       },
       {
         path: '/allfoods',
-        element: <Allfoods />
+        element: <Allfoods />,
       },
       {
         path: '/auth',
-        element: <Authpage />  // Use Authpage to manage login/register display
-      },{
-        path:'myprofile',
-        element: <PrivateRoute> <Myprofile/></PrivateRoute>
-      },{
-        path:'add-food-item',
-        element:<PrivateRoute> <AddFoodItem/></PrivateRoute>
-      }
-      ,{
-        path:'my-added-food-items',
-        element:<PrivateRoute> <Mypostfood/></PrivateRoute>
-      }
-    ]
+        element: <Authpage />,  
+      },
+      {
+        path: 'myprofile',
+        element: <PrivateRoute><Myprofile /></PrivateRoute>,
+      },
+      {
+        path: 'add-food-item',
+        element: <PrivateRoute><AddFoodItem /></PrivateRoute>,
+      },
+      {
+        path: 'my-added-food-items',
+        element: <PrivateRoute><Mypostfood /></PrivateRoute>,
+      },
+    ],
   },
 ]);
 
-
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-  <AuthProvider>
-
-  <RouterProvider router={router}></RouterProvider>
-  </AuthProvider>
-  </StrictMode>,
-)
+    <AuthProvider>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router}></RouterProvider>
+        <ToastContainer/>
+      </QueryClientProvider>
+    </AuthProvider>
+  </StrictMode>
+);
