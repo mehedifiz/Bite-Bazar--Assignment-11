@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import Banner from "../Components/Banner";
 import Topfoods from "../Components/Topfoods";
 import About from "../Components/About";
+import ProfileDropdown from "./Myprofile";
 
 const Home = () => {
     return (
@@ -17,6 +18,7 @@ const Home = () => {
                <Banner/>
 
                <Topfoods/>
+               
       <About/>
 
 

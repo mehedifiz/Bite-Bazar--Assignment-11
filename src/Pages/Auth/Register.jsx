@@ -6,6 +6,8 @@ const Register = ({ setShowLogin }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
 
   const handlegoogle = () => {
     signInWithGoogle().then((result) => {
@@ -18,8 +20,9 @@ const Register = ({ setShowLogin }) => {
     createUser(email, password)
       .then((result) => {
         setUser(result.user);
+        navigate('/')
         updateUserProfile(name ).then(() => {
-          console.log("Profile updated");
+          
         });
       })
       .catch((error) => console.error("Error registering:", error));

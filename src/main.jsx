@@ -9,6 +9,7 @@ import Allfoods from './Pages/Allfoods.jsx';
 import AuthProvider from './Auth/Authprovider.jsx';
 import Login from './Pages/Auth/Login.jsx';
 import Authpage from './Pages/Auth/Authpage.jsx';
+import Myprofile from './Pages/Myprofile.jsx';
 
 
 const router = createBrowserRouter([
@@ -31,6 +32,9 @@ const router = createBrowserRouter([
       {
         path: '/auth',
         element: <Authpage />  // Use Authpage to manage login/register display
+      },{
+        path:'myprofile',
+        element: <Myprofile/>
       }
     ]
   },
