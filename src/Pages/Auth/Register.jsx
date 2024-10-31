@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../Auth/Authprovider";
+import { useNavigate } from "react-router-dom";
 
 const Register = ({ setShowLogin }) => {
   const { signInWithGoogle, setUser, createUser, updateUserProfile } = useContext(AuthContext);

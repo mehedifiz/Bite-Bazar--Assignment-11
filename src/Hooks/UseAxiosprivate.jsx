@@ -22,7 +22,7 @@ const UseAxiosprivate = () => {
             return config;
         },
         (error) => {
-            // Handle request errors here
+            
             return Promise.reject(error);
         }
     );
@@ -30,15 +30,15 @@ const UseAxiosprivate = () => {
     AxiosSecure.interceptors.response.use(
         (response) => response,
         async (error) => {
-            if (error.response && error.response.status === 401) {
-                // Logout the user and navigate them away if they're unauthorized
+            if (error.response && error?.response?.status === 401) {
+                
                 await logOut();
-                navigate('/login');
+                navigate('/auth#login');
             }
             return Promise.reject(error);
         }
     );
-
+ 
     return AxiosSecure;
 };
 

@@ -11,6 +11,8 @@ import Login from './Pages/Auth/Login.jsx';
 import Authpage from './Pages/Auth/Authpage.jsx';
 import Myprofile from './Pages/Myprofile.jsx';
 import AddFoodItem from './Pages/AddFoodItem.jsx';
+import Mypostfood from './Pages/Mypostfood.jsx';
+import PrivateRoute from './Auth/Privateroute.jsx';
 
 
 const router = createBrowserRouter([
@@ -24,7 +26,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/food/:_id',
-        element: <SingleFoodPage />
+        element:<PrivateRoute>  <SingleFoodPage /></PrivateRoute>
       },
       {
         path: '/allfoods',
@@ -35,10 +37,14 @@ const router = createBrowserRouter([
         element: <Authpage />  // Use Authpage to manage login/register display
       },{
         path:'myprofile',
-        element: <Myprofile/>
+        element: <PrivateRoute> <Myprofile/></PrivateRoute>
       },{
         path:'add-food-item',
-        element:<AddFoodItem/>
+        element:<PrivateRoute> <AddFoodItem/></PrivateRoute>
+      }
+      ,{
+        path:'my-added-food-items',
+        element:<PrivateRoute> <Mypostfood/></PrivateRoute>
       }
     ]
   },
