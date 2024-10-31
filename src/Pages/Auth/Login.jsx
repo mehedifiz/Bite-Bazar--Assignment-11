@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../Auth/Authprovider";
 
 const Login = ({ setShowLogin }) => {
+    const {signInWithGoogle}=  useContext(AuthContext)
+
+    const handlegoogle =()=>{
+        signInWithGoogle()
+    }
+
+
+
   return (
     <div className='flex justify-center items-center min-h-screen'>
       <div className='flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg'>
@@ -13,7 +22,7 @@ const Login = ({ setShowLogin }) => {
               {/* Google icon */}
               <svg className='w-6 h-6' viewBox='0 0 40 40'> {/* SVG paths here */}</svg>
             </div>
-            <span className='w-5/6 px-4 py-3 font-bold text-center'>Sign in with Google</span>
+            <span onClick={()=> handlegoogle()} className='w-5/6 px-4 py-3 font-bold text-center'>Sign in with Google</span>
           </div>
 
           {/* Email Login Form */}
