@@ -10,6 +10,7 @@ import AuthProvider from './Auth/Authprovider.jsx';
 import Login from './Pages/Auth/Login.jsx';
 import Authpage from './Pages/Auth/Authpage.jsx';
 import Myprofile from './Pages/Myprofile.jsx';
+import AddFoodItem from './Pages/AddFoodItem.jsx';
 
 
 const router = createBrowserRouter([
@@ -35,6 +36,9 @@ const router = createBrowserRouter([
       },{
         path:'myprofile',
         element: <Myprofile/>
+      },{
+        path:'add-food-item',
+        element:<AddFoodItem/>
       }
     ]
   },
