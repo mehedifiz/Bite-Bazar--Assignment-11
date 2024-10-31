@@ -5,7 +5,7 @@ import UseAxiospublic from '../Hooks/UseAxiospublic';
 
 const AddFoodItem = () => {
   const { user } = useContext(AuthContext);
-const UseAxios = UseAxiospublic();
+const UseAxios = UseAxiosprivate();
   const [foodName, setFoodName] = useState('');
   const [foodImage, setFoodImage] = useState('');
   const [foodCategory, setFoodCategory] = useState('');
@@ -26,11 +26,7 @@ const UseAxios = UseAxiospublic();
       email: user?.email,
       date: new Date().toISOString(),
     };
- UseAxios.post("/addfoods", foodData ,{
-  headers: {
-    authorization : `Baerer ${localStorage.getItem('access-token')}`
-  }
- })
+ UseAxios.post("/addfoods", foodData )
       .then((response) => {
         console.log('Food item added successfully:', response.data);
       })

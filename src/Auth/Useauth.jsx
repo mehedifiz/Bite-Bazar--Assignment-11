@@ -4,7 +4,8 @@ import { AuthContext } from "./Authprovider";
  
 const useAuth = () => {
     
-    const auth = useContext(AuthContext);
+    
+    const auth =  useContext(AuthContext);
     return auth ;
 };
 

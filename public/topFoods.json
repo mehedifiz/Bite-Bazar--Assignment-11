@@ -32,7 +32,8 @@
         "origin": "Italy",
         "description": "A traditional Margherita pizza with fresh mozzarella, basil, and a homemade tomato sauce on a thin, crispy crust."
     },
-    {
+    { 
+        
         "_id": 4,
         "name": "Caesar Salad",
         "category": "Salad",
