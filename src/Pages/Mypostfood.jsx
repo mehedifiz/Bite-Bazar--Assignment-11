@@ -8,7 +8,7 @@ const Mypostfood = () => {
 
     return (
         <div className="container mx-auto p-4">
-            <h2 className="text-2xl font-bold mb-4">My Posted Food Items</h2>
+            <h2 className="text-2xl font-bold mb-4">My Posted Food Items {foodItems.length}</h2>
             <Mypostfoodtable   />
         </div>
     );

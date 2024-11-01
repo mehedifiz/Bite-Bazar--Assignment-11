@@ -3,9 +3,11 @@ import { useLocation } from 'react-router-dom';
 
 const SingleFoodPage = () => {
     const location = useLocation();
-    const { food } = location.state; // Get the food data from state
+    console.log(location)
+    const { food } = location.state;  
+    console.log(food)
 
-    // Check if food data is available
+     
     if (!food) return <div>Food data not available.</div>;
 
     return (

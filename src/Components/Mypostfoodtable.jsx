@@ -3,6 +3,8 @@ import React from 'react';
 import UseAxiosprivate from '../hooks/UseAxiosprivate';
 import { toast } from 'react-toastify';
 import useMypost from '../Hooks/Usemypost';
+import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const Mypostfoodtable = () => {
     const  [refetch ,foodItems] = useMypost();  
@@ -10,20 +12,40 @@ const Mypostfoodtable = () => {
     const axiosPrivate = UseAxiosprivate();
 
     const handleDelete = id => {
-        axiosPrivate.delete(`/myfoods/${id}`)
-            .then(res => {
-                
-                    console.log( res.data.deletedCount >0)
-                if (res.data.deletedCount) {
-                     refetch()
-                    toast.success('Deleted item');
-                }
-            })
-            .catch(err => {
-                toast.error('Failed to delete item');
-                console.error('Error deleting item:', err);
-            });
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+                axiosPrivate.delete(`/myfoods/${id}`)
+    .then(res => {
+        
+            
+        if (res.data.deletedCount > 0) {
+             refetch()
+            toast.success('Deleted item');
+        }
+    })
+    .catch(err => {
+        toast.error('Failed to delete item');
+        console.error('Error deleting item:', err);
+    });
+             
+            }
+          });
+       
     };
+
+    
+
+
+    
 
     return (
         <div className="overflow-x-auto">
@@ -45,12 +67,14 @@ const Mypostfoodtable = () => {
                             <td className="px-4 py-2">{item.name}</td>
                             <td className="px-4 py-2">${item.price}</td>
                             <td className="px-4 py-2">
-                                <button
+                               <Link to={`/updateitem/${item._id}`}>
+                               <button
                                     className="bg-blue-500 text-white px-2 py-1 rounded mr-2"
-                                    onClick={() => handleUpdate(item)}
+                                    
                                 >
                                     Update
                                 </button>
+                               </Link>
                                 <button
                                     className="bg-red-500 text-white px-2 py-1 rounded"
                                     onClick={() => handleDelete(item._id)}

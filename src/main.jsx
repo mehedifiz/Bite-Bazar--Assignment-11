@@ -16,6 +16,7 @@ import PrivateRoute from './Auth/Privateroute.jsx';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Update from './Pages/Update.jsx';
  
 const queryClient = new QueryClient();
 
@@ -51,6 +52,11 @@ const router = createBrowserRouter([
       {
         path: 'my-added-food-items',
         element: <PrivateRoute><Mypostfood /></PrivateRoute>,
+      },
+      {
+        path: 'updateitem/:_id',
+        loader:async({params})=> fetch(`http://localhost:5000/food/${params._id}`),
+         element: <Update/>,
       },
     ],
   },

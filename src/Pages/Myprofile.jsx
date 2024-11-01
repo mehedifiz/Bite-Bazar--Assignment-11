@@ -11,11 +11,11 @@ const MyProfile = () => {
       
       <div className="bg-white shadow-md rounded-lg p-6 mb-4 w-full max-w-md">
         <h2 className="text-xl font-semibold">User Information</h2>
-        <div className="flex items-center mt-4">
+        <div className="flex flex-col justify-center items-center mt-4">
           <img 
             src={user?.photoURL || "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"}  // User image from AuthContext
             alt="User Profile"
-            className="w-16 h-16 rounded-full mr-4"
+            className="w-26 h-28 rounded-full mr-4"
           />
           <div>
             <p className="font-semibold text-lg">{user?.displayName || 'User Name'}</p>
@@ -27,22 +27,22 @@ const MyProfile = () => {
       {/* Action Buttons Section */}
       <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-md">
         <h2 className="text-xl font-semibold mb-4">Manage My Food Items</h2>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-row gap-2">
           <Link
             to="/my-added-food-items"
-            className="btn btn-primary w-full"
+            className=" link bg-[#d6f103] h-14 p text-center font-semibold  "
           >
-            My Added Food Items
+            My Added Food 
           </Link>
           <Link
             to="/add-food-item"
-            className="btn btn-primary w-full"
+            className=" link bg-[#d6f103] h-14 p text-center font-semibold "
           >
             Add a Food Item
           </Link>
           <Link
             to="/my-ordered-food-items"
-            className="btn btn-primary w-full"
+            className="  link bg-[#d6f103] h-14 p text-center font-semibold"
           >
             My Ordered Food Items
           </Link>

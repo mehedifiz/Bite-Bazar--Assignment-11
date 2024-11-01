@@ -14,7 +14,7 @@ const Foodcard = ({ food }) => {
                 <p>Category: {category}</p>
                 <p>Price: ${price}</p>
                 <div className="card-actions justify-end">
-                    {/* Pass the food data using state in the Link */}
+                    
                     <Link to={`/food/${_id}`} state={{ food }} className="badge badge-outline flex items-center gap-1">
                         <FaInfoCircle /> Details
                     </Link>
