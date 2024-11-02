@@ -39,12 +39,11 @@ const UseAxiosprivate = () => {
             }
         );
 
-        // Cleanup function to eject interceptors on unmount
         return () => {
             AxiosSecure.interceptors.request.eject(requestInterceptor);
             AxiosSecure.interceptors.response.eject(responseInterceptor);
         };
-    }, [logOut, navigate]); // Dependencies array
+    }, [logOut, navigate]);  
 
     return AxiosSecure;
 };

@@ -17,6 +17,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Update from './Pages/Update.jsx';
+import Mycart from './Pages/Mycart.jsx';
  
 const queryClient = new QueryClient();
 
@@ -56,8 +57,11 @@ const router = createBrowserRouter([
       {
         path: 'updateitem/:_id',
         loader:async({params})=> fetch(`http://localhost:5000/food/${params._id}`),
-         element: <Update/>,
-      },
+         element: <PrivateRoute><Update/></PrivateRoute>
+      },{
+        path:'my-ordered-food-items',
+        element: <PrivateRoute><Mycart/></PrivateRoute>
+      }
     ],
   },
 ]);

@@ -9,7 +9,7 @@ const useMypost = () => {
 
     
     const { refetch, data: foodItems = [] } = useQuery({
-        queryKey: ['myFoods', user?.email], // 
+        queryKey: ['myFoods', user?.email], 
         queryFn: async () => {
             const res = await axiosPrivate.get(`/myfoods/${user.email}`); 
             return res.data; 

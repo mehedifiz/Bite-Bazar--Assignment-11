@@ -1,14 +1,40 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import UseAxiosprivate from '../hooks/UseAxiosprivate';
+import useAuth from '../Auth/Useauth';
+import { toast } from 'react-toastify';
 
 const SingleFoodPage = () => {
     const location = useLocation();
     console.log(location)
     const { food } = location.state;  
     console.log(food)
+    const axiosprivate = UseAxiosprivate()
+    
+    const {user}=useAuth()
+    const email = user.email
 
-     
-    if (!food) return <div>Food data not available.</div>;
+    const Purchase = async (item)=>{
+
+    const data = {
+    
+        name: item.name,
+        price: item.price,
+        image: item.image,
+        email: user?.email  
+    
+};
+
+
+        const result=   axiosprivate.post('/purchase' ,data);
+        if((await result).data.insertedId ){
+            toast.success('Item added to your cart !')
+        }
+
+
+
+    }
+
 
     return (
         <div className="max-w-4xl mx-auto p-6 mt-6 bg-stone-100 shadow-md rounded-lg">
@@ -31,7 +57,7 @@ const SingleFoodPage = () => {
                 <strong>Description:</strong> {food.description}
             </div>
             <div className="mt-6 flex justify-end">
-                <button className="btn hover:bg-[#574f17] bg-[#9a8c30] text-white font-semibold py-2">
+                <button onClick={()=> Purchase(food)} className="btn hover:bg-[#574f17] bg-[#9a8c30] text-white font-semibold py-2">
                     Purchase
                 </button>
             </div>
