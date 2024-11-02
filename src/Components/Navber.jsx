@@ -1,9 +1,13 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Auth/Authprovider";
+import useMycart from "../hooks/useMycart";
+import { FaCartShopping, FaCarTunnel } from "react-icons/fa6";
 
 const Navber = () => {
   const { user, logOut } = useContext(AuthContext);
+const [ refetch, cart ] = useMycart();
+  console.log(cart.length)
 
   const handleLogout = () => {
     logOut().then(() => {
@@ -15,7 +19,7 @@ const Navber = () => {
     <div className="navbar bg-slate-200 shadow-md flex justify-between">
 
       <div>
-        <a className="btn btn-ghost text-sm md:text-xl">daisyUI</a>
+        <a className="btn btn-ghost text-sm md:text-xl">Bite-Bazar</a>
       </div>
 
       <div>
@@ -65,17 +69,17 @@ const Navber = () => {
                     strokeWidth="2"
                     d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
-                <span className="badge badge-sm indicator-item">8</span>
+                <span className="badge badge-sm indicator-item">{cart.length}</span>
               </div>
             </div>
             <div
               tabIndex={0}
               className="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow">
               <div className="card-body">
-                <span className="text-lg font-bold">8 Items</span>
-                <span className="text-info">Subtotal: $999</span>
+                <p>Your Cart Here : </p>
+                    <span className="text-lg font-bold flex items-center gap-2"> <FaCartShopping/> {cart.length}</span>
                 <div className="card-actions">
-                  <button className="btn btn-primary btn-block">View cart</button>
+                  <Link to='/my-ordered-food-items' className="btn btn-primary btn-block">View cart</Link>
                 </div>
               </div>
             </div>

@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import UseAxiosprivate from '../hooks/UseAxiosprivate';
 import useAuth from '../Auth/Useauth';
 import { toast } from 'react-toastify';
+import useMycart from '../hooks/useMycart';
 
 const SingleFoodPage = () => {
     const location = useLocation();
@@ -10,6 +11,7 @@ const SingleFoodPage = () => {
     const { food } = location.state;  
     console.log(food)
     const axiosprivate = UseAxiosprivate()
+    const [refetch] =useMycart()
     
     const {user}=useAuth()
     const email = user.email
@@ -28,6 +30,7 @@ const SingleFoodPage = () => {
 
         const result=   axiosprivate.post('/purchase' ,data);
         if((await result).data.insertedId ){
+            refetch()
             toast.success('Item added to your cart !')
         }
 
