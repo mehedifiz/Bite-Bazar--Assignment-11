@@ -18,6 +18,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Update from './Pages/Update.jsx';
 import Mycart from './Pages/Mycart.jsx';
+import Error from './Pages/Error.jsx';
  
 const queryClient = new QueryClient();
 
@@ -25,6 +26,8 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
+        errorElement: <Error/>
+    ,
     children: [
       {
         path: '/',
