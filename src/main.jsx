@@ -19,6 +19,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Update from './Pages/Update.jsx';
 import Mycart from './Pages/Mycart.jsx';
 import Error from './Pages/Error.jsx';
+import Gallary from './Pages/Gallary.jsx';
  
 const queryClient = new QueryClient();
 
@@ -64,6 +65,9 @@ const router = createBrowserRouter([
       },{
         path:'my-ordered-food-items',
         element: <PrivateRoute><Mycart/></PrivateRoute>
+      },{
+        path:'gallery',
+        element: <Gallary></Gallary>
       }
     ],
   },
