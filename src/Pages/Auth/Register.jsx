@@ -39,6 +39,7 @@ const Register = ({ setShowLogin }) => {
             Name
           </label>
           <input
+          required
             id="registerName"
             className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg"
             type="text"
@@ -53,6 +54,7 @@ const Register = ({ setShowLogin }) => {
           </label>
           <input
             id="registerEmail"
+            required
             className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg"
             type="email"
             value={email}
@@ -66,6 +68,7 @@ const Register = ({ setShowLogin }) => {
           </label>
           <input
             id="registerPassword"
+            required
             className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg"
             type="password"
             value={password}
