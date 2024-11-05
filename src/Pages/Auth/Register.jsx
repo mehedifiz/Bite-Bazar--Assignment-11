@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../Auth/Authprovider";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Register = ({ setShowLogin }) => {
   const { signInWithGoogle, setUser, createUser, updateUserProfile } = useContext(AuthContext);
@@ -13,6 +14,8 @@ const Register = ({ setShowLogin }) => {
   const handlegoogle = () => {
     signInWithGoogle().then((result) => {
       setUser(result.user);
+      toast.success('Login Successfull')
+
     });
   };
 
@@ -22,6 +25,8 @@ const Register = ({ setShowLogin }) => {
       .then((result) => {
         setUser(result.user);
         navigate('/')
+        toast.success('Your are a foodies now !')
+
         updateUserProfile(name ).then(() => {
           
         });
