@@ -1,15 +1,15 @@
 // components/Mypostfoodtable.jsx
 import React from 'react';
-import UseAxiosprivate from '../hooks/UseAxiosprivate';
 import { toast } from 'react-toastify';
 import useMypost from '../Hooks/Usemypost';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
+import UseAxiospublic from '../hooks/UseAxiospublic';
 
 const Mypostfoodtable = () => {
     const  [refetch ,foodItems] = useMypost();  
 
-    const axiosPrivate = UseAxiosprivate();
+    const axiosPublic = UseAxiospublic();
 
     const handleDelete = id => {
 
@@ -23,7 +23,7 @@ const Mypostfoodtable = () => {
             confirmButtonText: "Yes, delete it!"
           }).then((result) => {
             if (result.isConfirmed) {
-                axiosPrivate.delete(`/myfoods/${id}`)
+                axiosPublic.delete(`/myfoods/${id}`)
     .then(res => {
         
             

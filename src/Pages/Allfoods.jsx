@@ -4,6 +4,7 @@ import Sectiontitle from '../Components/SectionTitle';
 import UseAxiospublic from '../hooks/UseAxiospublic';
 import Foodcard from '../Components/Foodcard';
 import { Button } from '@material-tailwind/react';
+import { Helmet } from 'react-helmet';
 
 const AllFoodPage = () => {
     const useAxiosPublic = UseAxiospublic();
@@ -37,6 +38,10 @@ const AllFoodPage = () => {
 
     return (
         <div>
+             <Helmet>
+        <title>All Food| Bite-Bazar  </title>
+         
+      </Helmet>
             <Rebanner
                 image="https://images.pexels.com/photos/1310777/pexels-photo-1310777.jpeg?auto=compress&cs=tinysrgb&w=600"
                 title="All Food Items 🥑"

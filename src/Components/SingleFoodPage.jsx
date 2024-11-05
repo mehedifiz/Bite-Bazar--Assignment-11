@@ -1,16 +1,17 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import UseAxiosprivate from '../hooks/UseAxiosprivate';
 import useAuth from '../Auth/Useauth';
 import { toast } from 'react-toastify';
 import useMycart from '../hooks/useMycart';
+import { Helmet } from 'react-helmet';
+import UseAxiospublic from '../hooks/UseAxiospublic';
+const axiosPublic = UseAxiospublic();
 
 const SingleFoodPage = () => {
     const location = useLocation();
     console.log(location)
     const { food } = location.state;  
     console.log(food)
-    const axiosprivate = UseAxiosprivate()
     const [refetch] =useMycart()
     
     const {user}=useAuth()
@@ -26,9 +27,10 @@ const SingleFoodPage = () => {
         email: user?.email  
     
 };
+console.log(data)
 
 
-        const result=   axiosprivate.post('/purchase' ,data);
+        const result=   axiosPublic.post('/purchase' ,data);
         if((await result).data.insertedId ){
             refetch()
             toast.success('Item added to your cart !')
@@ -41,6 +43,11 @@ const SingleFoodPage = () => {
 
     return (
         <div className="max-w-4xl mx-auto p-6 mt-6 bg-stone-100 shadow-md rounded-lg">
+            <Helmet>
+        <title>Home| Bite-Bazar - Food page </title>
+         
+      </Helmet>
+      
             <h1 className="text-3xl font-bold text-gray-800 mb-4">{food.name}</h1>
             <img src={food.image} alt={food.name} className="w-full h-72 object-cover rounded-md mb-4" />
             

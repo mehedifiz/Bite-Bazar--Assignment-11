@@ -4,15 +4,14 @@ import useAuth from "../Auth/Useauth";
 import { useForm } from "react-hook-form";
 import { FaUtensils } from "react-icons/fa";
 import UseAxiospublic from "../hooks/UseAxiospublic";
-import UseAxiosprivate from "../hooks/UseAxiosprivate";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 const Update = () => {
   const item = useLoaderData();
   const { user } = useAuth();
   const { register, handleSubmit } = useForm();
-  const Axiosprivate  = UseAxiosprivate();
-
+  const axiosPublic = UseAxiospublic()
   console.log("Loaded item:", item);
 
   const onSubmit = async (data) => {
@@ -29,7 +28,7 @@ const Update = () => {
       date: new Date().toISOString(),
     };
 
-    const result = await Axiosprivate.patch(`/update/${item._id}` , foodData)
+    const result = await axiosPublic.patch(`/update/${item._id}` , foodData)
     console.log(result.data)
 
     if(result.data.modifiedCount){
@@ -40,6 +39,10 @@ const Update = () => {
   return (
     <div>
       <Sectiontitle heading="Update the Item" />
+      <Helmet>
+        <title>Update Food| Bite-Bazar  </title>
+         
+      </Helmet>
 
       <div className="min-h-screen bg-gray-100 p-8">
         <h1 className="text-3xl font-bold text-center mb-8">Update Food Item</h1>

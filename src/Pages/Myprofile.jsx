@@ -1,12 +1,17 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Auth/Authprovider';
+import { Helmet } from 'react-helmet';
 
 const MyProfile = () => {
   const { user } = useContext(AuthContext); // Access user data from AuthContext
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+         <Helmet>
+        <title>Profile| Bite-Bazar  </title>
+         
+      </Helmet>
       <h1 className="text-2xl font-bold mb-4">My Profile</h1>
       
       <div className="bg-white shadow-md rounded-lg p-6 mb-4 w-full max-w-md">

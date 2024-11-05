@@ -2,12 +2,13 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { FaUtensils } from "react-icons/fa";
-import UseAxiosprivate from "../hooks/UseAxiosprivate";
 import useAuth from "../Auth/Useauth";
+import { Helmet } from "react-helmet";
+import UseAxiospublic from "../hooks/UseAxiospublic";
 
 const AddFoodItem = () => {
   const { register, handleSubmit } = useForm();
-  const axiosSecure = UseAxiosprivate();
+  const axiosPublic = UseAxiospublic();
   const {user} = useAuth();
 
   const onSubmit = async (data) => {
@@ -28,7 +29,7 @@ const AddFoodItem = () => {
 
     try {
       // Send food data to the backend
-      const response = await axiosSecure.post("/addfoods", foodData);
+      const response = await axiosPublic.post("/addfoods", foodData);
 
       if (response.data.insertedId) {
         toast.success(`${foodData.name} has been added to the menu!`);
@@ -41,6 +42,10 @@ const AddFoodItem = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 p-8">
+         <Helmet>
+        <title>Add Food| Bite-Bazar  </title>
+         
+      </Helmet>
       <h1 className="text-3xl font-bold text-center mb-8">Add a Food Item</h1>
 
       <form onSubmit={handleSubmit(onSubmit)} className="bg-white p-8 shadow-md rounded-lg max-w-lg mx-auto">
