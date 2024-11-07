@@ -20,6 +20,7 @@ import Update from "./Pages/Update.jsx";
 import Mycart from "./Pages/Mycart.jsx";
 import Error from "./Pages/Error.jsx";
 import Gallary from "./Pages/Gallary.jsx";
+import LocationSection from "./Components/LocationSection .jsx";
 
 const queryClient = new QueryClient();
 
@@ -102,6 +103,7 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AuthProvider>
+     
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router}></RouterProvider>
         <ToastContainer />

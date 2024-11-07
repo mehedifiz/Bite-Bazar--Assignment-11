@@ -3,27 +3,26 @@ import Banner from "../Components/Banner";
 import Topfoods from "../Components/Topfoods";
 import About from "../Components/About";
 import ProfileDropdown from "./Myprofile";
+import Reviews from "../Components/Review";
+import LocationSection from "../Components/LocationSection ";
 
 const Home = () => {
-    return (
-        <div>
-          <Helmet>
+  return (
+    <div>
+      <Helmet>
         <title>Home| Bite-Bazar - Discover Fresh </title>
-         
       </Helmet>
-      
 
-               <Banner/>
+      <Banner />
 
-               <Topfoods/>
-               
-      <About/>
+      <Topfoods />
 
+      <About />
 
-
-
-        </div>
-    );
+      <LocationSection />
+      <Reviews />
+    </div>
+  );
 };
 
 export default Home;

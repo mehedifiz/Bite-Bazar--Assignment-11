@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "name": "Anisha jahan ",
+      "description": "Shrimp seasoned with our special blend of spices, served in warm tortillas.",
+      "image": "https://cdn.prod.website-files.com/6365d860c7b7a7191055eb8a/65a752b15d58d46d51503280_Olivia%20Rhye-p-500.png"
+    },
+    {
+      "id": 2,
+      "name": "Elon Musk",
+      "description": "A juicy burger topped with fresh avocado and our homemade sauce.",
+      "image": "https://hips.hearstapps.com/hmg-prod/images/gettyimages-1229892983-square.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Rafsan Rabit ",
+      "description": "A classic favorite with fresh tomatoes, mozzarella, and basil.",
+      "image": "https://www.profilebakery.com/wp-content/uploads/2024/05/Profile-picture-created-with-ai.jpeg"
+    }
+  ]
+  

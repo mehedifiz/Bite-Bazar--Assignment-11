@@ -3,21 +3,19 @@ import Navber from "../Components/Navber";
 import Footer from "../Components/Footer";
 
 const Root = () => {
+  const location = useLocation();
+  const isLogin =
+    location.pathname.includes("auth") ||
+    location.pathname.includes("auth#signup");
+  return (
+    <div className="max-w-screen-xl mx-auto">
+      {isLogin || <Navber></Navber>}
 
-    const location = useLocation();
-    const isLogin = location.pathname.includes('auth') || location.pathname.includes('auth#signup')  
-    return (
-        <div className="max-w-screen-xl mx-auto">
+      <Outlet />
 
-            
-{ isLogin || <Navber></Navber>}
-
-            <Outlet/>
-
-            { isLogin ||   <Footer></Footer>}
-            
-        </div>
-    );
+      {isLogin || <Footer></Footer>}
+    </div>
+  );
 };
 
 export default Root;

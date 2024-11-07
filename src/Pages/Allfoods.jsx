@@ -42,7 +42,7 @@ const AllFoodPage = () => {
   };
 
   // pagination 
-  const totalFoods = data?.total || 0; 
+  const totalFoods = data?.total ;
   const numberOfPages = totalFoods > 0 ? Math.ceil(totalFoods / itemsPerPage) : 0;
   const pages = [...Array(numberOfPages).keys()];
 
@@ -81,7 +81,8 @@ const AllFoodPage = () => {
       </label>
 
       {isLoading ? (
-        <div className="text-center py-4">
+              <div className="text-center py-4 min-h-[30vh]">
+
           <span className="loading loading-spinner text-success"></span>
         </div>
       ) : error ? (

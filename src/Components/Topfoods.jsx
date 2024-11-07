@@ -26,7 +26,7 @@ const Topfoods = () => {
 
   if (isLoading) {
     return (
-      <div className="text-center py-4">
+       <div className="text-center py-4 min-h-[30vh]">
         <span className="loading loading-spinner text-success"></span>
       </div>
     );
